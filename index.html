@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naveen-Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="images/icon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/hover.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="aos/css/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navabr.css">
+    <link rel="stylesheet" href="owl/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="owl/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="js-plugins/fontawesome-free-6.1.1-web/css/all.min.css">
+    <link rel="stylesheet" href="lightbox/dist/css/lightbox.css">
+</head>
+<body>
+ <!-- ------------ -->
+
+   <!-- back to top----  -->
+   <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+  </div>
+ <!-- ------------ -->
+    <script src="js/jquery.min.js"></script>
+    <script src="bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="owl/js/owl.carousel.min.js"></script>
+    <script src="slick/slick.js"></script>
+    <script src="slick/slick.min.js"></script>
+    <script src="js-plugins/fontawesome-free-6.1.1-web/js/all.min.js"></script>
+    <script src="lightbox/dist/js/lightbox.js"></script>
+    <script src="purecounter/purecounter.js"></script>
+    <script src="aos/js/aos.js"></script>
+    <script>AOS.init();</script>
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+        // <span id="year"></span>
+    </script>
+ <!-- ------navbar-active------ -->
+ <!-- <script>
+  $(".navbar .nav-item .nav-link").on("click", function () {
+  $(".navbar").find(".active").removeClass("active");
+  $(this).addClass("active");
+  });
+ </script> -->
+ <!-- --------navbar-scroll-------  -->
+ <!-- <script>
+  $(window).scroll(function() {
+ 
+ let position    =   $(this).scrollTop();
+   if (position >= 1) {
+     $('header').addClass('navbar-scroll');
+   } else {
+     $('header').removeClass('navbar-scroll');
+   }
+
+});
+ </script> -->
+ <!-- ----projects-owl-----  -->
+  <!-- <script>
+    var $owl = $('.owl-carousel');
+
+$owl.children().each( function( index ) {
+  $(this).attr( 'data-position', index ); 
+});
+
+$owl.owlCarousel({
+  center: true,
+  loop: true,
+  items: 5,
+  responsive:{
+        0:{
+            items:3
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+});
+
+$(document).on('click', '.owl-item>div', function() {
+  var $speed = 300;
+  $owl.trigger('to.owl.carousel', [$(this).data( 'position' ), $speed] );
+});
+  </script> -->
+  <!-- tab-mob ------  -->
+  <!-- <script>
+    $('.tab-content2').hide();
+    $('#tab-1').show();
+ 
+    $('#select-box').change(function () {
+      dropdown = $('#select-box').val();
+      $('.tab-content2').hide();
+      $('#' + "tab-" + dropdown).show();
+    });
+  </script> -->
+  <!-- -----navbar- hide -----  -->
+  <!-- <script>
+     $('.navbar-nav .nav-item .nav-link').on('click', function () {
+      $('.navbar-collapse').collapse('hide');
+    });
+  </script> -->
+   <!-- back to top  -->
+   <script>
+    (function($) { "use strict";
+
+    $(document).ready(function(){"use strict";
+
+        //Scroll back to top
+
+        var progressPath = document.querySelector('.progress-wrap path');
+        var pathLength = progressPath.getTotalLength();
+        progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+        progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+        progressPath.style.strokeDashoffset = pathLength;
+        progressPath.getBoundingClientRect();
+        progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+        var updateProgress = function () {
+          var scroll = $(window).scrollTop();
+          var height = $(document).height() - $(window).height();
+          var progress = pathLength - (scroll * pathLength / height);
+          progressPath.style.strokeDashoffset = progress;
+        }
+        updateProgress();
+        $(window).scroll(updateProgress);
+        var offset = 50;
+        var duration = 550;
+        jQuery(window).on('scroll', function() {
+          if (jQuery(this).scrollTop() > offset) {
+            jQuery('.progress-wrap').addClass('active-progress');
+          } else {
+            jQuery('.progress-wrap').removeClass('active-progress');
+          }
+        });
+        jQuery('.progress-wrap').on('click', function(event) {
+          event.preventDefault();
+          jQuery('html, body').animate({scrollTop: 0}, duration);
+          return false;
+        })
+
+
+      });
+
+    })(jQuery);
+  </script>
+  <script>
+     document.addEventListener('scroll', function() {
+        var dropdownMenu = document.querySelector('.collapse');
+        dropdownMenu.classList.remove('show');
+    });
+  </script>
+</body>
+</html>
